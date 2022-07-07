@@ -9,15 +9,15 @@ import SwiftUI
 
 struct DetailsView: View {
 
-    var weather: Weather?
+    var weather: DayWeather?
 
     var body: some View {
         VStack{
-            // AsyncImage(url: URL(string: weather?.image ?? "")).frame(width: 150.0, height: 150.0)
-            Image(systemName: weather?.image ?? "sun.max.fill").resizable().frame(width: 50.0, height: 50.0).foregroundColor(weather?.imageColor ?? .accentColor)
-            Text(weather?.day ?? "").font(.title).fontWeight(.bold).foregroundColor(Color.accentColor)
-            Text("Max: \(weather?.max ?? 0) °C").foregroundColor(Color.accentColor)
-            Text("Min: \(weather?.min ?? 0) °C").foregroundColor(Color.accentColor)
+//            Image(systemName: weather?.weather[0].icon ?? "sun.max.fill").resizable().frame(width: 50.0, height: 50.0).foregroundColor(weather?.imageColor ?? .accentColor)
+            AsyncImage(url: URL(string: "https://openweathermap.org/img/w/\(weather?.weather[0].icon ?? "01d").png")).frame(width: 50.0, height: 50.0)
+            Text(weather?.weather[0].main ?? "Clear").font(.title).fontWeight(.bold).foregroundColor(Color.accentColor)
+            Text("Max: \(weather?.temp?.max ?? 0) °C").foregroundColor(Color.accentColor)
+            Text("Min: \(weather?.temp?.min ?? 0) °C").foregroundColor(Color.accentColor)
         }.frame(
             minWidth: 0,
             maxWidth: .infinity,
@@ -30,6 +30,6 @@ struct DetailsView: View {
 
 struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailsView(weather: Weather(id: 0, day: "Sunday", max: 45, min: 23, image: "sun.max.fill", imageColor: .orange))
+        DetailsView()
     }
 }

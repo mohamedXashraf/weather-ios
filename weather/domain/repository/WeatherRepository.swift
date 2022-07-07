@@ -7,5 +7,5 @@
 
 protocol WeatherRepository{
     
-    func getWeekWeather() -> [Weather]
+    func getWeekWeather(listener: @escaping (Weather) -> Void)
 }

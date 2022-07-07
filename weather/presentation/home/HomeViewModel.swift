@@ -9,13 +9,19 @@ import Combine
 
 class HomeViewModel: ObservableObject {
 
-    @Published var weekWeather = [Weather]()
+    @Published var weekWeather: Weather
 
     init() {
-        weekWeather = []
+        weekWeather = Weather()
     }
 
     func getWeekWeather() {
-        weekWeather = weekWeatherUseCase.run()
+        weekWeatherUseCase.run { weather in
+            self.weekWeather = weather
+        }
+    }
+    
+    func getDayWeather(index: Int) -> DayWeather {
+        return weekWeather.list[index]
     }
 }

@@ -7,7 +7,7 @@
 
 class GetWeekWeather {
 
-    func run() -> [Weather] {
-        return weatherRepository.getWeekWeather()
+    func run(listener: @escaping (Weather) -> Void) {
+        weatherRepository.getWeekWeather(listener: listener)
     }
 }

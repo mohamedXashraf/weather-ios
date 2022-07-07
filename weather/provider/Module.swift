@@ -8,3 +8,5 @@
 let weatherRepository: WeatherRepository = WeatherRepositoryImplementation()
 
 let weekWeatherUseCase: GetWeekWeather = GetWeekWeather()
+
+let weatherAPIs: WeatherAPIs = WeatherAPIs()

@@ -10,25 +10,25 @@ import SwiftUI
 struct HomeView: View {
 
     @ObservedObject private var viewModel = HomeViewModel()
-    @State var weather: Weather? = nil
+    @State var weather: DayWeather? = nil
 
     var body: some View {
         VStack {
             Text("Weather").font(.title).fontWeight(.bold).foregroundColor(Color.accentColor)
-            if !viewModel.weekWeather.isEmpty {
+            if !viewModel.weekWeather.list.isEmpty {
                 ScrollView (.horizontal, showsIndicators: false) {
                      HStack {
-                         ForEach (0..<viewModel.weekWeather.count, id: \.self) { index in
+                         ForEach (0..<viewModel.weekWeather.list.count, id: \.self) { index in
                              VStack {
-                                 Image(systemName: viewModel.weekWeather[index].image).resizable().frame(width: 50.0, height: 50.0).foregroundColor(viewModel.weekWeather[index].imageColor)
-                                 Text(viewModel.weekWeather[index].day).fontWeight(.bold).foregroundColor(Color.accentColor)
+                                 AsyncImage(url: URL(string: "https://openweathermap.org/img/w/\(viewModel.getDayWeather(index: index).weather[0].icon ?? "01d").png")).frame(width: 50.0, height: 50.0)
+                                 Text(viewModel.getDayWeather(index: index).weather[0].main ?? "Clear").font(.title).fontWeight(.bold).foregroundColor(Color.accentColor)
                              }.padding().onTapGesture {
-                                 weather = viewModel.weekWeather[index]
+                                 weather = viewModel.getDayWeather(index: index)
                              }
                          }
                      }
                 }.frame(height: 200)
-                DetailsView(weather: weather ?? viewModel.weekWeather[0])
+                DetailsView(weather: weather ?? viewModel.getDayWeather(index: 0))
             }
         }.frame(
             minWidth: 0,
