@@ -14,7 +14,7 @@ struct DetailsView: View {
     var body: some View {
         VStack{
 //            Image(systemName: weather?.weather[0].icon ?? "sun.max.fill").resizable().frame(width: 50.0, height: 50.0).foregroundColor(weather?.imageColor ?? .accentColor)
-            AsyncImage(url: URL(string: "https://openweathermap.org/img/w/\(weather?.weather[0].icon ?? "01d").png")).frame(width: 50.0, height: 50.0)
+            AsyncImage(url: URL(string: "\(weatherIconUrl)\(weather?.weather[0].icon ?? "01d")\(weatherIconExtension)")).frame(width: 50.0, height: 50.0)
             Text(weather?.weather[0].main ?? "Clear").font(.title).fontWeight(.bold).foregroundColor(Color.accentColor)
             Text("Max: \(weather?.temp?.max ?? 0) °C").foregroundColor(Color.accentColor)
             Text("Min: \(weather?.temp?.min ?? 0) °C").foregroundColor(Color.accentColor)

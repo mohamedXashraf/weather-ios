@@ -20,7 +20,7 @@ struct HomeView: View {
                      HStack {
                          ForEach (0..<viewModel.weekWeather.list.count, id: \.self) { index in
                              VStack {
-                                 AsyncImage(url: URL(string: "https://openweathermap.org/img/w/\(viewModel.getDayWeather(index: index).weather[0].icon ?? "01d").png")).frame(width: 50.0, height: 50.0)
+                                 AsyncImage(url: URL(string: "\(weatherIconUrl)\(viewModel.getDayWeather(index: index).weather[0].icon ?? "01d")\(weatherIconExtension)")).frame(width: 50.0, height: 50.0)
                                  Text(viewModel.getDayWeather(index: index).weather[0].main ?? "Clear").font(.title).fontWeight(.bold).foregroundColor(Color.accentColor)
                              }.padding().onTapGesture {
                                  weather = viewModel.getDayWeather(index: index)

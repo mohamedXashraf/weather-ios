@@ -23,6 +23,7 @@
 		D900E854285D236B001E0AE4 /* WeatherRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D900E853285D236B001E0AE4 /* WeatherRepositoryImplementation.swift */; };
 		D900E856285D25AE001E0AE4 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D900E855285D25AE001E0AE4 /* HomeViewModel.swift */; };
 		D900E859285D27E6001E0AE4 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = D900E858285D27E6001E0AE4 /* Module.swift */; };
+		D9AD808A287875C600A09AFA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AD8089287875C600A09AFA /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		D900E853285D236B001E0AE4 /* WeatherRepositoryImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRepositoryImplementation.swift; sourceTree = "<group>"; };
 		D900E855285D25AE001E0AE4 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		D900E858285D27E6001E0AE4 /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
+		D9AD8089287875C600A09AFA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 		D900E80A285D0C4C001E0AE4 /* weather */ = {
 			isa = PBXGroup;
 			children = (
+				D9AD8088287875A400A09AFA /* utils */,
 				D93F335B285E2FA500F2A5D9 /* provider */,
 				D900E837285D0CAC001E0AE4 /* presentation */,
 				D900E836285D0CA4001E0AE4 /* domain */,
@@ -248,6 +251,14 @@
 				D900E858285D27E6001E0AE4 /* Module.swift */,
 			);
 			path = provider;
+			sourceTree = "<group>";
+		};
+		D9AD8088287875A400A09AFA /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				D9AD8089287875C600A09AFA /* Constants.swift */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,6 +402,7 @@
 				D900E80C285D0C4C001E0AE4 /* weatherApp.swift in Sources */,
 				D900E859285D27E6001E0AE4 /* Module.swift in Sources */,
 				D900E843285D0E53001E0AE4 /* SplashView.swift in Sources */,
+				D9AD808A287875C600A09AFA /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
