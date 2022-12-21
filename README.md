@@ -3,7 +3,7 @@
 - Simple iOS App for displaying week weather.
 
 - Topics:
-  * Clean Architecture: 3 Layers : (Presentation, Domain, Data) Layers.
+  * Layered Architecture: 3 Layers : (Presentation, Domain, Data) Layers.
   * Presentation Layer:
     * SwiftUI.
     * MVVM Presentation Architecture Pattern.
